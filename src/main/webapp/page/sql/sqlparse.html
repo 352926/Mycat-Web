@@ -140,7 +140,7 @@
 										return '<button  class="btn btn-primary btn-xs modify"  onclick="explainMysql12(\''
 												+ item.DATA_NODE
 												+ '\',\''
-												+ item.SQL + '\')">解析</button>';
+												+ item.SQL.replace(/\'/g, "\\'") + '\')">解析</button>';
 									}
 								}, {
 									title : 'datanode',
