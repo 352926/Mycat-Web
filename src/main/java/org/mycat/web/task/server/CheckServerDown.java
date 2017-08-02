@@ -20,7 +20,7 @@ public class CheckServerDown implements ITask {
 	private static final int timeout = 10;  //10S
 	
 	@Override
-	public void excute(String dbName, Date nowDate) {  
+	public void execute(String dbName, Date nowDate) {
 		DataSource dbSource = (DataSource)SpringApplicationContext.getBean(dbName + MycatPortType.MYCAT_MANGER + "dataSource");
 		Connection conn = null;
 		try {

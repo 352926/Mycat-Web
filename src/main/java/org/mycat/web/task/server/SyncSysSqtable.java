@@ -25,7 +25,7 @@ public class SyncSysSqtable implements ITask {
 	private static final String SYSPARAM_NAMESPACE = "SYSSHOW";
 	
 	@Override
-	public void excute(String dbName, Date nowDate) {  
+	public void execute(String dbName, Date nowDate) {
 //		if (!DataSourceUtils.getInstance().isMycatManger(dbName)){
 //			return ;
 //		}

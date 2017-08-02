@@ -22,7 +22,7 @@ public class SyncSysSql implements ITask {
 	private static final String SYSPARAM_NAMESPACE = "SYSSHOW";
 	
 	@Override
-	public void excute(String dbName, Date nowDate) {  
+	public void execute(String dbName, Date nowDate) {
 		//System.out.println("持久化mycat中数据:"+dbName);
 //		if (!DataSourceUtils.getInstance().isMycatManger(dbName)){
 //			return ;

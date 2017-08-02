@@ -23,7 +23,7 @@ public class SyncSysSqlsum implements ITask {
 	private static final String SYSPARAM_NAMESPACE = "SYSSHOW";
 	
 	@Override
-	public void excute(String dbName, Date nowDate) {  
+	public void execute(String dbName, Date nowDate) {
 //		if (!DataSourceUtils.getInstance().isMycatManger(dbName)){
 //			return ;
 //		}
@@ -35,7 +35,7 @@ public class SyncSysSqlsum implements ITask {
 			entry.remove("R%"); 
 			if (((long)entry.get("R")>0) || ((long)entry.get("W")>0) ) {
 			  entry.put("DB_NAME", DataSourceUtils.getInstance().getDbName(dbName));
-			  SqliteStore.getInstance().insert(showService.getDao(), NAMESPACE, "insert", entry);  
+			  SqliteStore.getInstance().insert(showService.getDao(), NAMESPACE, "insert", entry);
 			}
 		} 
  

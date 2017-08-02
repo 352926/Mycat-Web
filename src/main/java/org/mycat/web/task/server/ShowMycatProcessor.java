@@ -24,7 +24,7 @@ public class ShowMycatProcessor extends BaseService implements ITask {
 //	}
 	
 	@Override
-	public void excute(String dbName, Date nowDate) {
+	public void execute(String dbName, Date nowDate) {
 		List<Map<String, Object>> datas = super.getDao().query(dbName + MycatPortType.MYCAT_MANGER, NAMESPACE, STATEMENT);
 		for(Map<String, Object> data : datas){
 			data.put("createTime", nowDate);

@@ -1,5 +1,5 @@
-BuildTime  2017-07-26T08:31:03Z
-GitVersion   05e6bb397a5202e229ee3b83fb4758d72957d423
+BuildTime  2017-07-26T08:47:31Z
+GitVersion   b7975206f3acbf842970f6a8c77ab14405a39b03
 MavenVersion 1.0-SNAPSHOT
 GitUrl https://github.com/MyCATApache/Mycat-Web.git
 MyCatSite http://mycat.io

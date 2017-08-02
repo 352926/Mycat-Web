@@ -40,7 +40,7 @@ public class CheckMycatSuspend extends BaseService implements ITask {
 	private static final int timeout = 10;  //宕机timeout：10S
 	
 	@Override
-	public void excute(String dbName, Date nowDate) {
+	public void execute(String dbName, Date nowDate) {
 		
 		DataSource dbSource = (DataSource)SpringApplicationContext.getBean(dbName + MycatPortType.MYCAT_MANGER + "dataSource");
 		Connection conn = null;

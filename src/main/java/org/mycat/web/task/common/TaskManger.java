@@ -46,7 +46,7 @@ public class TaskManger {
             	LOG.info("定时任务中的dbName列表:" + dbNames.toString());
         		for(String dbName : dbNames){
         			try{
-        				task.excute(dbName, nowDate);
+        				task.execute(dbName, nowDate);
         			}catch(Exception ex){
                 		ex.printStackTrace();
                 	}
@@ -83,7 +83,7 @@ public class TaskManger {
         			try{
 		        		ScheduledFuture<?> sf = scheduler.schedule(new Runnable() {  
 		        			public void run() {
-		                		task.excute(dbName, nowDate);		
+		                		task.execute(dbName, nowDate);
 		        			}
 		        		}, 0, TimeUnit.MILLISECONDS);  
 		        		try {

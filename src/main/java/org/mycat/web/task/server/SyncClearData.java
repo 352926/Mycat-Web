@@ -19,7 +19,7 @@ public class SyncClearData implements ITask {
 	private static final String NAMESPACE_SYSSQLTABLE = "SYSSQLTABLE";
 	private static final String NAMESPACE_SYSSQLSUM ="SYSSQLSUM";
 	@Override
-	public void excute(String dbName, Date nowDate) {
+	public void execute(String dbName, Date nowDate) {
 		// TODO Auto-generated method stub
 		System.out.println("开始清理历史监控数据");
 		String day = (String)RainbowProperties.getProperties("clearday");
