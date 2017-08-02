@@ -2,11 +2,34 @@
 <head>
 <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
 <title>My97DatePicker</title>
-<script type="text/javascript" src="config.js"></script>
 <script>
-if(parent==window)
-	location.href = 'http://www.my97.net';
-var $d, $dp, $pdp = parent.$dp, $dt, $tdt, $sdt, $IE=$pdp.ie, $FF = $pdp.ff,$OPERA=$pdp.opera, $ny, $cMark = false, langList = [];
+var langList =
+    [
+        {name: 'en', charset: 'UTF-8'},
+        {name: 'zh-cn', charset: 'UTF-8'},
+        {name: 'zh-tw', charset: 'GBK'}
+    ];
+
+var skinList =
+    [
+        {name: 'default', charset: 'UTF-8'},
+        {name: 'whyGreen', charset: 'UTF-8'}
+    ];
+var $lang = {
+    errAlertMsg: "不合法的日期格式或者日期超出限定范围,需要撤销吗?",
+    aWeekStr: ["周", "日", "一", "二", "三", "四", "五", "六"],
+    aLongWeekStr: ["周", "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+    aMonStr: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一", "十二"],
+    aLongMonStr: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+    clearStr: "清空",
+    todayStr: "今天",
+    okStr: "确定",
+    updateStr: "确定",
+    timeStr: "时间",
+    quickStr: "快速选择",
+    err_1: '最小日期不能大于最大日期!'
+};
+var $d, $dp, $pdp = parent.$dp, $dt, $tdt, $sdt, $IE=$pdp.ie, $FF = $pdp.ff,$OPERA=$pdp.opera, $ny, $cMark = false;
 if ($pdp.eCont) {
 	$dp = {};
 	for (var p in $pdp) {
@@ -35,7 +58,6 @@ $dp.getLang = function(name){
 }
  
 $dp.realLang = $dp.getLang($dp.lang);
-document.write("<script src='lang/" + $dp.realLang.name + ".js' charset='" + $dp.realLang.charset + "'><\/script>");
 
 for (var i = 0; i < skinList.length; i++) {
     document.write('<link rel="stylesheet" type="text/css" href="skin/' + skinList[i].name + '/datepicker.css" title="' + skinList[i].name + '" charset="' + skinList[i].charset + '" disabled="true"/>');
