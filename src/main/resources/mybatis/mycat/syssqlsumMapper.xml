@@ -17,7 +17,7 @@
 			LAST_TIME,
 			LAST_TM,
 			TTL_COUNT
-		)
+		) 
 		values( 
 		    #{DB_NAME, jdbcType=VARCHAR},
 			#{R, jdbcType=NUMERIC,typeHandler=NumberHandler}, 		
@@ -103,10 +103,10 @@
 	<select id="sqlsum" parameterType="map" resultType="map">
 		select 
 			DB_NAME, 
-			MAX(R) - MIN(R) as R,
-			(MAX(R) - MIN(R))/((MAX(R) - MIN(R))+(MAX(W) - MIN(W))) as PERCENT_R,
+			sum(R) as R, 
+			sum(R)/(sum(R)+sum(W)) as PERCENT_R,
 			max(MAX) as MAX,
-			MAX(W) - MIN(W) as W,
+			sum(W) as W, 
 			ID,
 			TIME_COUNT,
 			USER,

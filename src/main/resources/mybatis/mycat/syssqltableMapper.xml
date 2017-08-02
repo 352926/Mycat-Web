@@ -99,9 +99,9 @@
 		select 
 		    DB_NAME,
 		    DB_TABLE,
-			sum(R) as R, 
-			sum(R)/(sum(R)+sum(W)) as PERCENT_R,
-			sum(W) as W
+			MAX(R) - MIN(R) as R,
+			(MAX(R) - MIN(R))/((MAX(R) - MIN(R))+(MAX(W) - MIN(W))) as PERCENT_R,
+			(MAX(W) - MIN(W)) as W
 			
 			from t_mycat_syssqltable 
 		<where> 
