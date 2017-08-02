@@ -17,3 +17,13 @@
 
 由于之前觉得mycat-web的统计一直有问题，后来做了测试，发现数据偏差的离谱，因为问了很多地方，找了很久很久。
 当时就怀着“再不济自己看源码找问题”的想法，最后果然实现了看源码找到问题并修复了。
+
+vim etc/jetty.xml
+
+修改访问ip、端口、路径
+
+vim mycat-web/WEB-INF/classes/mycat.properties
+
+修改zookeeper和sqlonline 配置
+
+升级版本如果需要保留原有统计数据，则将原mycat-web/WEB-INF/db/mycat-web.db覆盖新的，同时如果出现mycatJVM性能监控里的监控条件丢失，可去mycat-VM管理修改下记录即可
